@@ -1,0 +1,6 @@
+while (n != 1.0):          # if quotient is equal to 1.0, which means original input is divisible by 3, loop ends
+    n /= 3                 # keep dividing by 3 to see if n eventually equals 1.0
+    if (n < 1):            # if n becomes less than 1, than original input is not divisible by 3, so return False
+        return False
+
+return True                # returning True means while loop condition was true therefore input is divisible by 3

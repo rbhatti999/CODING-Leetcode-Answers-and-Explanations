@@ -1,0 +1,3 @@
+s, t = list(s), list(t)     # convert both strings to list
+s.sort(), t.sort()          # sort lists 
+return s == t               # if lists are equal, strings equal, therefore string is an anagram

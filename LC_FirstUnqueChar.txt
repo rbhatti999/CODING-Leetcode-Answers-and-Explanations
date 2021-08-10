@@ -1,0 +1,9 @@
+from collections import Counter
+
+myDict = Counter(s)                 # use counter to create dictionary with keys as char in string and values as count of char
+
+for index, char in enumerate(s):    # use enumerate to iterate thru string
+    if (myDict[char] == 1):         # if char we are on has value == 1 in dictionary, return its index in the input string
+        return index
+
+return -1

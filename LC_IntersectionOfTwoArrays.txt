@@ -1,0 +1,8 @@
+answerList = []                 # initialize list to hold answers
+
+for i in nums1:                 # iterate thru the nums1 to see if values are also in nums2
+    if (i in nums2):
+        answerList.append(i)    # add number to answerList if present in both lists
+        nums2.remove(i)         # remove number from second list so we do not count it again if same number exists later on in nums1 and not in nums2.
+
+return answerList

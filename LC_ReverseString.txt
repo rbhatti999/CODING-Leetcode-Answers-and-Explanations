@@ -1,0 +1,15 @@
+p1 = 0                             # initialize two pointers
+p2 = -1
+
+for i in range(len(s) // 2):      # iterate through len(s)//2 so we can go over every char in string (except center char in odd length string).
+    if (s[p1] == s[p2]):          # if pointers are equal to each other, characters are same so no point in switching characters
+        p1 += 1
+        p2 -= 1                   # even if don't switch characters, increment and decrement both pointers to continue scanning thru rest of string
+        continue                  # skip to the next iteration if pointers are equal
+
+    s[p1], s[p2] = s[p2], s[p1]   # if pointers are not equal, switch their character positions.
+
+    p1 += 1                       # increment and decrement pointers to continue scanning thru rest of string
+    p2 -= 1
+
+return s
