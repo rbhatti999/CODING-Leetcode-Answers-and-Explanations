@@ -1,0 +1,10 @@
+if (n == 0):                   # if n == 0, return nums1. This means there are no numbers in nums2 to be inserted into nums1.
+    return nums1
+
+index = -1                      # initialize variable index to -1. We will scan nums1 backwards because zeroes are in the back of nums1
+
+for i in range(n):              # iterate through the length of nums2 so we can access all value that will be inserted into nums1
+    nums1[index] = nums2[i]     # replace zeroes in nums1 with values in nums2. 
+    index -= 1                  # decrement index so we can continue scanning nums1 backwards for zeroes.
+
+return nums1.sort()             # return nums in ascending order

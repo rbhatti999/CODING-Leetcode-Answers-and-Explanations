@@ -1,0 +1,15 @@
+finalList = [[1]]                                          # initialize list with one element which is another list holding integer 1. It's easier to add the sequential lists (or rows) starting from this point.
+
+if (numRows == 1):                                          # if input is equal to 1 row, then return current list 
+    return finalList
+
+for i in range(1, numRows):                                 # iterate from 1 (which represents the second row) and end at numRows (i will be numRows-1 and that is because numRows-1 actually represents the row numRows is referring to).
+    newList = [1]                                           # add 1 at the beginning of every row
+
+    for j in range(len(finalList[-1])-1):                       # iterate through list (or row) at the end and only iterate up to the second last value in the list. We don't need to iterate over last value. 
+        newList.append(finalList[-1][j] + finalList[-1][j+1])   # add j and j+1. We don't iterate over last value because j+1 wouldn't exist 
+    
+        newList.append(1)                                       # add 1 to end of list as every row should end with 1
+        finalList.append(newList)                               # add this new list (or row) to the finalList, which represents Pascal's Triangle
+
+return finalList

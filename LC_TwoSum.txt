@@ -1,0 +1,9 @@
+check_dict = {}                             # initialize dictionary to keep track of numbers we have already seen
+
+for index, value in enumerate(nums):        # iterate thru list using enumerate so we can keep track of index and value at the same time
+    remaining = target - value              # subtract target from value and store it in remaining. We will try to look for remaining in future iterations to see if remainng and value are the sum to target.
+
+    if (remaining in check_dict):               # if remaining is in dictionary, we have our the two values that sum to our target and can return their index's.
+        return index, check_dict[remaining]
+    else:                                       # if remaining is not in dictionary, then we haven't found the second number that can potentially add to value and equal to target. So store value and index in dictionary.
+        check_dict[value] = index

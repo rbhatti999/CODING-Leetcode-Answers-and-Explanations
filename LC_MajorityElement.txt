@@ -1,0 +1,3 @@
+nums.sort()                     # sort nums in ascending order
+return nums[len(nums)//2]       # return number in middle of list. 
+                                # If majority elements appears more than half the length of the list, then one value of that majority element will always exist in halfway point of list. 

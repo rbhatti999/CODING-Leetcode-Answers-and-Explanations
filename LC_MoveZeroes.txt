@@ -1,0 +1,14 @@
+p1 = 0                                             # initialize two pointers. P1 should always be a 0, while P2 should always be a non-zero
+p2 = 0
+
+for i in range(len(nums)):                         # iterate through the lenght of the list so we have a chance at scanning every value in the list
+    if (nums[p1] == 0 and nums[p2] != 0):          # this implies we have a zero ahead of a non-zero number in the list, so flip their positions
+        nums[p1], nums[p2] = nums[p2], nums[p1]
+
+    if (nums[p1] != 0):                            # if p1 value is not 0, then increment p1 until its equals index holding a 0
+        p1 += 1
+
+    p2 += 1                                        # increment p2 always so it can equal to an index holding a non-zero value
+    
+                                                   # always make sure p1 index holds a 0, and p2 index holds a non-zero. When this happens, flip the numbers at those index's. This will get a list with trailing zeros.
+return nums 

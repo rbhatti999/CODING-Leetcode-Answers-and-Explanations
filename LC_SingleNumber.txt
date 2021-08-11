@@ -1,0 +1,11 @@
+if (len(nums) == 1):                        # if list is only 1 element long, return that one element
+    return nums[0]
+
+dup_check = {}                              # initialize dictionary to store values and their counts
+
+for i in nums:
+    dup_check[i] = dup_check.get(i, 0) + 1  # if the key is new to dict, then automatically assign it a value of 0. Otherwise, increment value of current key by 1. 
+
+for i in dup_check:
+    if (dup_check[i] == 1):                 # if value of key is equal to 1, then we have found the single number
+        return i

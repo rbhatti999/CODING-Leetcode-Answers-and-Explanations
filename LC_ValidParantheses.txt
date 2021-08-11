@@ -1,0 +1,10 @@
+myDict = {'(': ')', '[':']','{': '}'}                   # initialize dictionary with opening paranthesis as keys and closing as values.
+stack = []                                              # initialize list which will be used as stack data structure to pop out an opening paranthesis if it matches with i (and this checking is done with the dictionary).
+
+for i in s:
+    if (i in myDict):                                   # only add opening paranthesis to a stack
+        stack.append(i)
+    elif (len(stack)==0 or myDict[stack.pop()] != i):   # we enter this condition with a closing paranthesis. If the stack is empty and we have a empty paranthesis, that means there is not opening paranthesis to match therefore invalid input. 
+        return False                                    # if stack is not empty, we pop out the last element in the stack. If they don't match, we have an invalid input. The value popped must be a valid opening paranthesis to the closing paranthesis
+
+return len(stack) == 0                                  # if stack is empty after iterating through all of input, then we had a valid input (all parantheses were matching). However, if stack is still not empty that means we have an opening paranthesis left therefore there was no matching closing paranthesis making it invalid input

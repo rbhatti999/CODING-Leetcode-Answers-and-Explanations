@@ -1,0 +1,9 @@
+countDict = {}             # initialize dictionary to check if value appears more than once
+
+for i in nums:
+    if (i in countDict):     # if i is already in dictionary, return True because this indicates we have a duplicate
+        return True
+    else:
+        countDict[i] = 1     # if i not already in dictionary, add i to dictionary. If same value for i appears again, we will be able to identify there's a duplicate.
+
+return False                 # returning false means there was no duplicate in the input

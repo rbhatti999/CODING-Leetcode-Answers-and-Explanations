@@ -1,0 +1,14 @@
+# a number which is not happy will end up looping in cycle of the same numbers. We can detect if our loop enters into this cycle by seeing if a duplicate value is being added to checkDup.
+
+checkDup = set()                        # initialize checkDup list where will store new n values
+
+while (n != 1):                         # create while loop. If n eventually equals 1 break out of the loop.
+
+    n = sum([int(i)**2 for i in str(n)])    # iterate thru n and take square root of each integer value. The squared i values will be added to a list and then will be added together.
+    if (n in checkDup):                     # check if n is already in list. If it is, then that means the loop is stuck in a cycle of the same numbers, therefore not happy number
+        return False
+    else:
+        checkDup.append(n)                  # add n to list if not already in list. Doing so will allow us to check future n values and see if they are or are not in the list.
+
+return True                                 # returning True here means while loop broke out and we have a happy number
+

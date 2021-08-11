@@ -1,0 +1,7 @@
+s = list(''.join([i for i in s if i.isalnum()]).lower())    # change every character to lowercase in input using .lower().
+                                                            # create a list which will only contain alphanumeric characters from the input using .isalnum()
+                                                            # use .join() to create a string from the list
+                                                            # create a list from that string with no spaces between characters. S is now a list with lowercase, alphanumeric characters with no space between them.
+a = list(reversed(s))                                       # reverse the new list and assign to a variable we will use to compare to input
+
+return s == a                                               # if reversed list and non-reversed list are equal, then the original input is a palindrome so return True

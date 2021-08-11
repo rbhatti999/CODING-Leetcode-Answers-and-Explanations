@@ -1,0 +1,12 @@
+minVal = max(prices)               # set minVal equal to the maximum value in the list
+mp = 0                             # mp stands for max profit and is initialized to 0
+
+for i in range(len(prices)):       
+    if (prices[i] < minVal):       # if prices[i] is less than minVal, minVal is equal to prices[i]. We always want minVal to be as low value as possible so we can have largest possible profit. 
+        minVal = prices[i]
+    else:
+        cp = prices[i] - minVal     # if prices[i] is greater than minVal, we can obtain profit so subtract
+        if (mp < cp):               # if profit just obtained is greater than current max profit, then new max profit is equal to profit we just obtained.
+            mp = cp
+
+return mp
